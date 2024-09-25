@@ -1,5 +1,5 @@
 FROM harbor.vuitton.net/lvm/ubuntu:u22.04-v1.6
-LABEL maintainer="myoung34@my.apsu.edu"
+LABEL maintainer="lvfr_devops@louisvuitton.com"
 
 ARG DUMB_INIT_VERSION="1.2.2"
 ARG GIT_CORE_PPA_KEY="A1715D88E1DF1F24"
