@@ -31,6 +31,14 @@ jobs:
       - name: set testable image environment variable
         id: testvars
         run: echo "GH_RUNNER_IMAGE=ubuntu-${{ matrix.release }}-${{ env.GIT_SHA }}-${{ matrix.platform }}" >> $GITHUB_ENV
+      - name: Login to Harbor
+        uses: docker/login-action@v3
+        with:
+          registry: harbor.vuitton.net
+          username: ${{ secrets.HARBOR_USERNAME }}
+          password: ${{ secrets.HARBOR_PASSWORD }}
+
+        
 
 
 
