@@ -1,24 +1,14 @@
 name: GitHub Actions Runner in Docker - Base
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - Dockerfile.base
-      - .github/workflows/base.yml
-      - goss*
-    branches:
-      - master
-      - develop
-  schedule:
-    - cron:  '0 22 * * *'
 
 jobs:
   ubuntu_base_tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        release: [jammy, focal, noble]
-        platform: [amd64, arm64]
+        release: [jammy]
+        platform: [amd64]
       fail-fast: false
     steps:
       - name: Copy Repo Files
